@@ -1,0 +1,34 @@
+<body class=" border border-primary w-75 m-auto p-3 mb-2 bg-dark text-white" style="border-radius: 25px;">
+  <div class="container ">
+    <div class="row justify-content-center">
+      <div class="col">
+
+        <table class="table text-white">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Update</th>
+              <th scope="col">Details</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="students.length>0 else loadingBlock">
+            <tr *ngFor="let s of students">
+              <td>{{s.id}}</td>
+              <td>{{s.Name}}</td>
+              <td>{{s.Age}}</td>
+              <td><a routerLink="/update/{{s.id}}">Click</a></td>
+              <td><a routerLink="/student/{{s.id}}">Click</a></td>
+              <td><a (click)="Delete(s.id)" style="cursor: pointer; color:rgb(87, 87, 205); text-decoration: underline;">Delete</a></td>
+            </tr>
+          </tbody>
+          <ng-template #loadingBlock>
+            <div style="color: red;">loading...</div>
+          </ng-template>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>

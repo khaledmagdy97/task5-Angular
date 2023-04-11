@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body class="bg-secondary text-white">
+    <div class="container ">
+        <div style="border-radius: 25px;" class=" border border-danger row m-5 justify-content-center d-flex align-items-center bg-dark text-white p-5">
+            <div class="col-6 justify-content-end d-flex  align-items-center">
+               <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink=""> <button type="button" class="btn btn-primary">Add</button></a>
+            </div>
+            <div class="col-6 justify-content-start d-flex align-items-center">
+                <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/students"><button type="button" class="btn btn-info">Students</button></a>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

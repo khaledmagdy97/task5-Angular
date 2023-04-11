@@ -1,0 +1,33 @@
+<body class=" w-75 m-auto p-3 mb-2 bg-dark text-white border border-warning" style="border-radius: 25px;">
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="col">
+                <table class="table text-white">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">phone</th>
+                            <th scope="col">courses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="user else loadingBlock">
+                            <th scope="row">{{user.id}}</th>
+                            <td>{{user.Email}}</td>
+                            <td>{{user.Name}}</td>
+                            <td>{{user.Age}}</td>
+                            <td>{{user.phone}}</td>
+                            <td>{{user.courses}}</td>
+                    </tr>
+
+                    <ng-template #loadingBlock>
+                      <div style="color: red;">loading...</div>
+                    </ng-template>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>

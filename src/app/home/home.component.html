@@ -1,0 +1,52 @@
+<body class="border border-light w-75 m-auto p-3 mb-2 bg-dark text-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col">
+
+        <form (ngSubmit)="getValues()" [formGroup]="formValidation" class="form" method="post">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input formControlName="email" #email name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div *ngIf="!validEmail() && email.value " id="emailHelp" class="form-text text-danger">Not Valid Email !</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="Name" class="form-label">Name</label>
+            <input formControlName="name" #name type="text" class="form-control" id="Name" name="name" aria-describedby="NameHelp">
+            <div *ngIf="!validName() && name.value " id="nameHelp" class="form-text text-danger">Not Valid Name !</div>
+
+          </div>
+
+          <div class="mb-3">
+            <label for="Age" class="form-label">Age</label>
+            <input formControlName="age" #age type="text" name="age" class="form-control" id="Age" aria-describedby="AgeHelp">
+            <div *ngIf="!validAge() && age.value " id="ageHelp" class="form-text text-danger">Not Valid age !</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">phone</label>
+            <input formControlName="phone" #phone type="text" name="phone" class="form-control" id="phone" aria-describedby="phoneHelp">
+            <div *ngIf="!validPhone() && phone.value " id="ageHelp" class="form-text text-danger">Not Valid phone !</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="courses" class="form-label">courses</label>
+            <input formControlName="courses" #courses type="text" name="courses" class="form-control" id="courses" aria-describedby="coursesHelp">
+            <div *ngIf="!validCourses() && courses.value " id="coursesHelp" class="form-text text-danger">Not Valid courses !</div>
+          </div>
+
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+
+          <!-- <a routerLink="/students"> -->
+            <button type="submit" (click)="AddStudent(name.value,age.value,email.value,phone.value,courses.value)" class="btn btn-primary">Submit</button>
+          <!-- </a> -->
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</body>
